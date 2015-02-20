@@ -1,0 +1,13 @@
+﻿
+
+@Html.TextArea(string.Empty,
+    ViewData.TemplateInfo.FormattedModelValue
+)
+
+<script type="text/javascript">
+    $(document).ready(
+        function () {
+            $('#@ViewData.TemplateInfo.GetFullHtmlFieldName(string.Empty)').redactor(); @* You can use editor options here more informationabout redactor options look at http://imperavi.com/redactor/docs/settings/ *@
+        }
+    );
+</script>

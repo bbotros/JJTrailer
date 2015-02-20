@@ -1,0 +1,101 @@
+﻿@model PagedList.IPagedList<JJTrailerStore.Areas.Admin.Models.Category>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<ol class="breadcrumb">
+    <li><a href="#">Catalog</a></li>
+
+    <li class="active">Catagories</li>
+</ol>
+
+<div class="bs-glyphicons pull-right">
+    <ul class="bs-glyphicons-list">
+
+        <li>
+            <a href=@Url.Action("Create", "Categories", new { area="Admin"})>
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                <span class="glyphicon-class">Add New Category</span>
+            </a>
+        </li>
+        </ul>
+    </div>
+      
+        @using (Html.BeginForm("Index", "Categories", new { area = "Admin" }, FormMethod.Get, new { @class = "form-inline" }))
+        {
+            <p>
+                Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
+                <input type="submit" value="Filter" class ="btn-sm" />
+            </p>
+        }
+<br/>
+        <table class="table ">
+            <tr>
+                <th>
+                    @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                </th>
+
+                <th>
+                    @Html.ActionLink("Status", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+
+
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        
+                        <a href=@Url.Action("Details", "Categories", new { area = "Admin", id = item.ID })>
+                            
+                            <span class="glyphicon-class">@item.Name</span>
+                        </a>
+                        </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+
+
+                        <div class="bs-glyphicons pull-right">
+                            <ul class="bs-glyphicons-list list-inline">
+
+                                <li>
+                                    <a href=@Url.Action("Edit", "Categories", new { area = "Admin", id = item.ID })>
+                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                        <span class="glyphicon-class">Edit</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=@Url.Action("Details", "Categories", new { area = "Admin", id = item.ID })>
+                                        <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
+                                        <span class="glyphicon-class">Details</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href=@Url.Action("Delete", "Categories", new { area="Admin", id = item.ID })>
+                                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                        <span class="glyphicon-class">Delete</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                    </td>
+                </tr>
+            }
+
+        </table>
+        <br />
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+
+

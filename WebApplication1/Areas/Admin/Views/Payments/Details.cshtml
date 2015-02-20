@@ -1,0 +1,42 @@
+﻿@model JJTrailerStore.Areas.Admin.Models.Payment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Payment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentMethodID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaymentMethodID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentTransactionID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaymentTransactionID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isPaid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isPaid)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,159 @@
+﻿@model IEnumerable<JJTrailerStore.Areas.Admin.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MetaTagDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MetaTagKeywords)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductImageID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SKU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShopID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaxClassID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MinimumQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubtractStock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OutOfStockStatusID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InStoreOnly)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DimensionID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WeightClassID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ManufacturerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RelatedProductID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MetaTagDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MetaTagKeywords)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductImageID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SKU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShopID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaxClassID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MinimumQuantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubtractStock)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OutOfStockStatusID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InStoreOnly)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DimensionID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WeightClassID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ManufacturerID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RelatedProductID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

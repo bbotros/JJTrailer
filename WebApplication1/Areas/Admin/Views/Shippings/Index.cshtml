@@ -1,0 +1,63 @@
+﻿@model IEnumerable<JJTrailerStore.Areas.Admin.Models.Shipping>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ShippingMethodID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShippingPickupDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isShipped)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isArrived)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActualArrivalDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstimatedArrivalDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShippingMethodID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShippingPickupDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isShipped)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isArrived)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActualArrivalDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstimatedArrivalDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

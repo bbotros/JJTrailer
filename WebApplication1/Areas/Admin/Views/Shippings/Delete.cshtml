@@ -1,0 +1,72 @@
+﻿@model JJTrailerStore.Areas.Admin.Models.Shipping
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Shipping</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ShippingMethodID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShippingMethodID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShippingPickupDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShippingPickupDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isShipped)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isShipped)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isArrived)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isArrived)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActualArrivalDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActualArrivalDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstimatedArrivalDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstimatedArrivalDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

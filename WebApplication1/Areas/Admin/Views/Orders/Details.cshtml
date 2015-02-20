@@ -1,0 +1,82 @@
+﻿@model JJTrailerStore.Areas.Admin.Models.Order
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.InvoiceID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvoiceID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShoppingCartID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShoppingCartID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaymentID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShippingID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShippingID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IPAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IPAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserBrowser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserBrowser)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
